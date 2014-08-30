@@ -62,6 +62,8 @@ namespace DcrawUi
             {
                 string tmp = parameters + " " + files[0];
                 ProcessWorker worker1 = new ProcessWorker(0,tmp);
+                worker1.WorkHasFinished += new WorkHasFinishedDelegate(worker1_WorkHasFinished);
+                worker1.texthasrecieved = texthasrecieved;
                 runningProcesses[ID] = worker1;
                 workerListner = new Thread(worker1.StartProcess);
                 workerListner.Start();
