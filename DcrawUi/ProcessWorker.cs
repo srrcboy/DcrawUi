@@ -26,23 +26,29 @@ namespace DcrawUi
         public void StartProcess()
         {
 
-                Process startInfo = new Process();
-                startInfo.StartInfo.FileName = @"dcraw.exe";
-                startInfo.StartInfo.UseShellExecute = false;
-                startInfo.StartInfo.RedirectStandardOutput = true;
-                startInfo.StartInfo.RedirectStandardError = true;
-                startInfo.StartInfo.CreateNoWindow = true;
-                startInfo.EnableRaisingEvents = true;
-                startInfo.StartInfo.Arguments = parameters; // your arguments
-                startInfo.OutputDataReceived += new DataReceivedEventHandler(startInfo_OutputDataReceived);
-                startInfo.ErrorDataReceived += new DataReceivedEventHandler(startInfo_ErrorDataReceived);
-                startInfo.Start();
-                //string output = startInfo.StandardOutput.ReadToEnd();
-                startInfo.WaitForExit();
-                if (WorkHasFinished != null)
-                {
-                    WorkHasFinished(ID);
-                }
+            Process startInfo = new Process();
+            startInfo.StartInfo.FileName = @"dcraw.exe";
+            startInfo.StartInfo.UseShellExecute = false;
+            startInfo.StartInfo.RedirectStandardOutput = true;
+            startInfo.StartInfo.RedirectStandardError = true;
+            startInfo.StartInfo.CreateNoWindow = true;
+            startInfo.EnableRaisingEvents = true;
+            startInfo.StartInfo.Arguments = parameters; // your arguments
+            sendMessage("Starting converting : " + parameters);
+            startInfo.OutputDataReceived += new DataReceivedEventHandler(startInfo_OutputDataReceived);
+            startInfo.ErrorDataReceived += new DataReceivedEventHandler(startInfo_ErrorDataReceived);
+
+            startInfo.Start();
+            startInfo.BeginOutputReadLine();
+            startInfo.BeginErrorReadLine();
+            //string output = startInfo.StandardOutput.ReadToEnd();
+                
+            startInfo.WaitForExit();
+            if (WorkHasFinished != null)
+            {
+                WorkHasFinished(ID);
+                sendMessage("End converting : " + parameters);
+            }
         }
 
         void startInfo_ErrorDataReceived(object sender, DataReceivedEventArgs e)
@@ -58,6 +64,14 @@ namespace DcrawUi
             if (texthasrecieved != null)
             {
                 texthasrecieved(e.Data);
+            }
+        }
+
+        private void sendMessage(string text)
+        {
+            if (texthasrecieved != null)
+            {
+                texthasrecieved(text);
             }
         }
     }

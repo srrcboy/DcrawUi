@@ -66,8 +66,8 @@ namespace DcrawUi
         {
             if (textBox_Log.InvokeRequired)
             {
-                
-                textBox_Log.Invoke(new Action(() => textBox_Log.Text += text));
+
+                textBox_Log.Invoke(new Action(() => textBox_Log.Text += text + "\r\n"));
             }
         }
         
