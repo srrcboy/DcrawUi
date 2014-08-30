@@ -43,6 +43,7 @@
             this.toolStripButton_ConvertFiles = new System.Windows.Forms.ToolStripButton();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -106,6 +107,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.textBox_Parameters);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -196,6 +198,16 @@
             this.openFileDialog1.Multiselect = true;
             this.openFileDialog1.RestoreDirectory = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(8, 42);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(470, 459);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,6 +249,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_ConvertFiles;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox textBox_Log;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
