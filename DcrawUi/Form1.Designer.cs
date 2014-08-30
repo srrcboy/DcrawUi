@@ -32,25 +32,25 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.Settings = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton_Add_Files = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton_addFolder = new System.Windows.Forms.ToolStripButton();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.toolStripButton_ConvertFiles = new System.Windows.Forms.ToolStripButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox_Parameters = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBox_Log = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton_Add_Files = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_addFolder = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_ConvertFiles = new System.Windows.Forms.ToolStripButton();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.Settings.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -94,6 +94,16 @@
             this.Settings.Text = "Files";
             this.Settings.UseVisualStyleBackColor = true;
             // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(672, 503);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.textBox_Parameters);
@@ -105,12 +115,37 @@
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // openFileDialog1
+            // textBox_Parameters
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "RAW|*.raw|RAW|.*RAW";
-            this.openFileDialog1.Multiselect = true;
-            this.openFileDialog1.RestoreDirectory = true;
+            this.textBox_Parameters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_Parameters.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::DcrawUi.Properties.Settings.Default, "Settings_textbox", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox_Parameters.Location = new System.Drawing.Point(9, 16);
+            this.textBox_Parameters.Name = "textBox_Parameters";
+            this.textBox_Parameters.Size = new System.Drawing.Size(663, 20);
+            this.textBox_Parameters.TabIndex = 0;
+            this.textBox_Parameters.Text = global::DcrawUi.Properties.Settings.Default.Settings_textbox;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.textBox_Log);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(678, 509);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Log";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // textBox_Log
+            // 
+            this.textBox_Log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_Log.Location = new System.Drawing.Point(3, 3);
+            this.textBox_Log.Multiline = true;
+            this.textBox_Log.Name = "textBox_Log";
+            this.textBox_Log.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_Log.Size = new System.Drawing.Size(672, 503);
+            this.textBox_Log.TabIndex = 0;
             // 
             // toolStrip1
             // 
@@ -144,16 +179,6 @@
             this.toolStripButton_addFolder.Text = "Add Folder";
             this.toolStripButton_addFolder.Click += new System.EventHandler(this.toolStripButton_addFolder_Click);
             // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(672, 503);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
-            // 
             // toolStripButton_ConvertFiles
             // 
             this.toolStripButton_ConvertFiles.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -164,36 +189,12 @@
             this.toolStripButton_ConvertFiles.Text = "Convert Files";
             this.toolStripButton_ConvertFiles.Click += new System.EventHandler(this.toolStripButton_ConvertFiles_Click);
             // 
-            // textBox_Parameters
+            // openFileDialog1
             // 
-            this.textBox_Parameters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_Parameters.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::DcrawUi.Properties.Settings.Default, "Settings_textbox", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox_Parameters.Location = new System.Drawing.Point(9, 16);
-            this.textBox_Parameters.Name = "textBox_Parameters";
-            this.textBox_Parameters.Size = new System.Drawing.Size(663, 20);
-            this.textBox_Parameters.TabIndex = 0;
-            this.textBox_Parameters.Text = global::DcrawUi.Properties.Settings.Default.Settings_textbox;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.textBox_Log);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(678, 509);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Log";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // textBox_Log
-            // 
-            this.textBox_Log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_Log.Location = new System.Drawing.Point(3, 3);
-            this.textBox_Log.Multiline = true;
-            this.textBox_Log.Name = "textBox_Log";
-            this.textBox_Log.Size = new System.Drawing.Size(672, 503);
-            this.textBox_Log.TabIndex = 0;
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "RAW|*.raw|RAW|.*RAW";
+            this.openFileDialog1.Multiselect = true;
+            this.openFileDialog1.RestoreDirectory = true;
             // 
             // Form1
             // 
@@ -212,10 +213,10 @@
             this.Settings.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
