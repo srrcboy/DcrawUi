@@ -117,47 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>Raw photo decoder "dcraw" v9.21
-by Dave Coffin, dcoffin a cybercom o net
-
-Usage:  dcraw [OPTION]... [FILE]...
-
--v         Print verbose messages
--c         Write image data to standard output
--e         Extract embedded thumbnail image
--i          Identify files without decoding them
--i -v     Identify files and show metadata
--z         Change file dates to camera timestamp
--w        Use camera white balance, if possible
--a         Average the whole image for white balance
--A         &lt;x y w h&gt; Average a grey box for white balance
--r          &lt;r g b g&gt; Set custom white balance
-+M/-M     Use/don't use an embedded color matrix
--C         &lt;r b&gt;  Correct chromatic aberration
--P         &lt;file&gt; Fix the dead pixels listed in this file
--K         &lt;file&gt; Subtract dark frame (16-bit raw PGM)
--k         &lt;num&gt;  Set the darkness level
--S         &lt;num&gt;  Set the saturation level
--n        &lt;num&gt;  Set threshold for wavelet denoising
--H       [0-9]  Highlight mode (0=clip, 1=unclip, 2=blend, 3+=rebuild)
--t         [0-7]  Flip image (0=none, 3=180, 5=90CCW, 6=90CW)
--o        [0-5]  Output colorspace (raw,sRGB,Adobe,Wide,ProPhoto,XYZ)
--d        Document mode (no color, no interpolation)
--D        Document mode without scaling (totally raw)
--j         Don't stretch or rotate raw pixels
--W      Don't automatically brighten the image
--b       &lt;num&gt;  Adjust brightness (default = 1.0)
--g       &lt;p ts&gt; Set custom gamma curve (default = 2.222 4.5)
--q       [0-3]  Set the interpolation quality
--h       Half-size color image (twice as fast as "-q 0")
--f        Interpolate RGGB as four colors
--m     &lt;num&gt;  Apply a 3x3 median filter to R-G and B-G
--s       [0..N-1] Select one raw image or "all" from each file
--6       Write 16-bit instead of 8-bit
--4       Linear 16-bit, same as "-6 -W -g 1 1"
--T       Write TIFF instead of PPM</value>
-  </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>326, 17</value>
   </metadata>
@@ -213,4 +172,45 @@ Usage:  dcraw [OPTION]... [FILE]...
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>186, 17</value>
   </metadata>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Raw photo decoder "dcraw" v9.21
+by Dave Coffin, dcoffin a cybercom o net
+
+Usage:  dcraw [OPTION]... [FILE]...
+
+-v         Print verbose messages
+-c         Write image data to standard output
+-e         Extract embedded thumbnail image
+-i          Identify files without decoding them
+-i -v     Identify files and show metadata
+-z         Change file dates to camera timestamp
+-w        Use camera white balance, if possible
+-a         Average the whole image for white balance
+-A         &lt;x y w h&gt; Average a grey box for white balance
+-r          &lt;r g b g&gt; Set custom white balance
++M/-M     Use/don't use an embedded color matrix
+-C         &lt;r b&gt;  Correct chromatic aberration
+-P         &lt;file&gt; Fix the dead pixels listed in this file
+-K         &lt;file&gt; Subtract dark frame (16-bit raw PGM)
+-k         &lt;num&gt;  Set the darkness level
+-S         &lt;num&gt;  Set the saturation level
+-n        &lt;num&gt;  Set threshold for wavelet denoising
+-H       [0-9]  Highlight mode (0=clip, 1=unclip, 2=blend, 3+=rebuild)
+-t         [0-7]  Flip image (0=none, 3=180, 5=90CCW, 6=90CW)
+-o        [0-5]  Output colorspace (raw,sRGB,Adobe,Wide,ProPhoto,XYZ)
+-d        Document mode (no color, no interpolation)
+-D        Document mode without scaling (totally raw)
+-j         Don't stretch or rotate raw pixels
+-W      Don't automatically brighten the image
+-b       &lt;num&gt;  Adjust brightness (default = 1.0)
+-g       &lt;p ts&gt; Set custom gamma curve (default = 2.222 4.5)
+-q       [0-3]  Set the interpolation quality
+-h       Half-size color image (twice as fast as "-q 0")
+-f        Interpolate RGGB as four colors
+-m     &lt;num&gt;  Apply a 3x3 median filter to R-G and B-G
+-s       [0..N-1] Select one raw image or "all" from each file
+-6       Write 16-bit instead of 8-bit
+-4       Linear 16-bit, same as "-6 -W -g 1 1"
+-T       Write TIFF instead of PPM</value>
+  </data>
 </root>

@@ -122,6 +122,20 @@ namespace DcrawUi
             textBox_Log.SelectionStart = textBox_Log.Text.Length;
             textBox_Log.ScrollToCaret();
         }
+
+        private void listView1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            addFiles(s);
+        }
+
+        private void listView1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.All;
+            else
+                e.Effect = DragDropEffects.None;
+        }
         
     }
 }
