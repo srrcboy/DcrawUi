@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace DcrawUi
 {
@@ -11,11 +12,12 @@ namespace DcrawUi
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            SingelInstanzForm single = new SingelInstanzForm();
+            single.Run(args);
+            
         }
     }
 }

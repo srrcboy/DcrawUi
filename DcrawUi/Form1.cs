@@ -16,15 +16,51 @@ namespace DcrawUi
         WorkersHandler workerHandler;
         public delegate void TextRecievedDelegate(string text);
         public event TextRecievedDelegate texthasrecieved;
+        public string[] Args;
 
         public Form1()
         {
+
             InitializeComponent();
             files = new List<string>();
             workerHandler = new WorkersHandler();
             texthasrecieved = new TextRecievedDelegate(OnDataRecieved);
             textBox_Parameters.TextChanged += new EventHandler(textBox_Parameters_TextChanged);
         }
+
+        public Form1(string[] args)
+        {
+            
+            InitializeComponent();
+            files = new List<string>();
+            workerHandler = new WorkersHandler();
+            texthasrecieved = new TextRecievedDelegate(OnDataRecieved);
+            textBox_Parameters.TextChanged += new EventHandler(textBox_Parameters_TextChanged);
+            addFiles(args);
+        }
+
+        public delegate void ProcessParametersDelegate(object sender, string[] args);
+        public void ProcessParameters(object sender, string[] args)
+        {
+            // The form has loaded, and initialization will have been be done.
+
+            // Add the command-line arguments to our textbox, just to confirm that
+            // it reached here.
+            if (args != null && args.Length != 0)
+            {
+                addFiles(args);
+            }
+        }
+
+        private void addFiles(string[] args)
+        {
+            for (int i = 0; i < args.Length; i++)
+            {
+                files.Add(args[i]);
+                listView1.Items.Add(args[i]);
+            }
+        }
+
 
         void textBox_Parameters_TextChanged(object sender, EventArgs e)
         {
