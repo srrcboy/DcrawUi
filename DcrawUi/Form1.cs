@@ -56,8 +56,12 @@ namespace DcrawUi
         {
             for (int i = 0; i < args.Length; i++)
             {
-                files.Add(args[i]);
-                listView1.Items.Add(args[i]);
+                if (args[i].EndsWith(".raw"))
+                {
+                    files.Add(args[i]);
+                    listView1.Items.Add(args[i]);
+                }
+                
             }
         }
 
