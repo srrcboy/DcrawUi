@@ -23,6 +23,13 @@ namespace DcrawUi
             files = new List<string>();
             workerHandler = new WorkersHandler();
             texthasrecieved = new TextRecievedDelegate(OnDataRecieved);
+            textBox_Parameters.TextChanged += new EventHandler(textBox_Parameters_TextChanged);
+        }
+
+        void textBox_Parameters_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Settings_textbox = textBox_Parameters.Text;
+            Properties.Settings.Default.Save();
         }
 
         private void toolStripButton_Add_Files_Click(object sender, EventArgs e)
@@ -59,7 +66,9 @@ namespace DcrawUi
 
         private void toolStripButton_ConvertFiles_Click(object sender, EventArgs e)
         {
-            workerHandler.Start(files, textBox_Parameters.Text, OnDataRecieved);
+            List<String> toWork = new List<string>();
+            toWork.AddRange(files);
+            workerHandler.Start(toWork, textBox_Parameters.Text, OnDataRecieved);
         }
 
         private void OnDataRecieved(string text)
@@ -67,8 +76,15 @@ namespace DcrawUi
             if (textBox_Log.InvokeRequired)
             {
 
-                textBox_Log.Invoke(new Action(() => textBox_Log.Text += text + "\r\n"));
+                textBox_Log.Invoke(new Action(() => writeToLog(text)));
             }
+        }
+
+        private void writeToLog(string text)
+        {
+            textBox_Log.Text += text + "\r\n";
+            textBox_Log.SelectionStart = textBox_Log.Text.Length;
+            textBox_Log.ScrollToCaret();
         }
         
     }

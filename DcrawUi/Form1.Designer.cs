@@ -60,7 +60,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tabControl);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(686, 535);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(686, 510);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -81,7 +81,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(686, 535);
+            this.tabControl.Size = new System.Drawing.Size(686, 510);
             this.tabControl.TabIndex = 0;
             // 
             // Settings
@@ -112,7 +112,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(678, 509);
+            this.tabPage2.Size = new System.Drawing.Size(678, 484);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(678, 509);
+            this.tabPage1.Size = new System.Drawing.Size(678, 484);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Log";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -145,8 +145,9 @@
             this.textBox_Log.Location = new System.Drawing.Point(3, 3);
             this.textBox_Log.Multiline = true;
             this.textBox_Log.Name = "textBox_Log";
+            this.textBox_Log.ReadOnly = true;
             this.textBox_Log.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_Log.Size = new System.Drawing.Size(672, 503);
+            this.textBox_Log.Size = new System.Drawing.Size(672, 478);
             this.textBox_Log.TabIndex = 0;
             // 
             // toolStrip1
@@ -200,11 +201,15 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(8, 42);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(470, 459);
+            this.textBox1.Size = new System.Drawing.Size(664, 434);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
@@ -214,6 +219,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 560);
             this.Controls.Add(this.toolStripContainer1);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "DcrawUI";
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
